@@ -1,10 +1,19 @@
-# cse210-05
-Cycle Game
+# cse210-05 Cycle Game
 
-<!-- Adapt snake README to Cycle -->
-# Snake
-Snake is a clone of the classic game that we all used to play on our cellphones. You play this game 
-on a simulated terminal, with a textual interface.
+<!-- Design Plan:
+-Duplicate and rename control_actions_actor.py to apply to two actors/ players, and update the "I, J, K, L" keys in keyboard_service.py to be arrows - Kosei
+-Update Handle_collisions.py to handle snake collisions, the lose game functionality, and how the snakes grow -Camden
+-Update main.py and make it control two players -Mary
+-Adapt Snake files to cycle game, especially the ReadME, Constants.py, and Director.py files. Jump in where needed to make game functional, and possible collaborate with Mary to make a "game rounds and score" enhancement - Jenny
+(Polymorphism is applied in our design by overwriting the execute method in varies files)
+-->
+
+# Cycle
+Cycle is inspired by the game Tron Cycle. 
+
+Cycles is a two player game where you each control a snake and try to make the other play run into your tail by blocking them in with it.
+
+You play the game on a simulated terminal, with a textual interface.
 
 ## Getting Started
 ---
@@ -24,7 +33,7 @@ project folder. Select the main module inside the hunter folder and click the "r
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- snake               (source code for game)
++-- cycle               (source code for game)
   +-- game              (specific game classes)
   +-- __main__.py       (entry point for program)
 +-- README.md           (general info)
@@ -37,4 +46,7 @@ root                    (project root folder)
 
 ## Authors
 ---
-* TODO: Add your name and email here
+*  Mary Goff
+*  Camden Miller
+*  Kosie Kameta
+*  Jennifer Walton
