@@ -10,52 +10,52 @@ class Cycle(Actor):
     The responsibility of cycle is to move itself.
 
     Attributes:
-        _segments (list): The list of segments in the bicycle trail.
+        _trails (list): The list that makes up the trail of the bicycle.
         _prepare_body (method): The body of the bicycle.
     """
     def __init__(self):
         super().__init__()
-        self._segments = []
+        self._trails = []
 
-    def get_segments(self):
-        return self._segments
+    def get_trails(self):
+        return self._trails
 
     def move_next(self):
-        # move all segments
-        for segment in self._segments:
-            segment.move_next()
+        # move all trails
+        for trail in self._trails:
+            trail.move_next()
         # update velocities
-        for i in range(len(self._segments) - 1, 0, -1):
-            trailing = self._segments[i]
-            previous = self._segments[i - 1]
+        for i in range(len(self._trails) - 1, 0, -1):
+            trailing = self._trails[i]
+            previous = self._trails[i - 1]
             velocity = previous.get_velocity()
             trailing.set_velocity(velocity)
 
-    def get_head(self):
-        return self._segments[0]
+    def get_cycle(self):
+        return self._trails[0]
 
-    def grow_tail(self):
-        tail = self._segments[-1]
-        velocity = tail.get_velocity()
+    def extend_trail(self):
+        trail = self._trails[-1]
+        velocity = trail.get_velocity()
         offset = velocity.reverse()
-        position = tail.get_position().add(offset)
+        position = trail.get_position().add(offset)
         
-        segment = Actor()
-        segment.set_position(position)
-        segment.set_velocity(velocity)
-        segment.set_text("#")
-        segment.set_color(self.get_color())
-        self._segments.append(segment)
+        trail = Actor()
+        trail.set_position(position)
+        trail.set_velocity(velocity)
+        trail.set_text("#")
+        trail.set_color(self.get_color())
+        self._trails.append(trail)
 
-    def turn_head(self, velocity):
-        self._segments[0].set_velocity(velocity)
+    def turn_cycle(self, velocity):
+        self._trails[0].set_velocity(velocity)
     
     def create_cycle(self, position=Point(int(constants.MAX_X/2), int(constants.MAX_Y/2)), color=constants.GREEN):
         self.set_color(color)
         
-        segment = Actor()
-        segment.set_text("8")
-        segment.set_position(position)
-        segment.set_color(constants.GREEN)
-        segment.set_velocity(Point(0, 0))
-        self._segments.append(segment)
+        trail = Actor()
+        trail.set_text("8")
+        trail.set_position(position)
+        trail.set_color(constants.GREEN)
+        trail.set_velocity(Point(0, 0))
+        self._trails.append(trail)

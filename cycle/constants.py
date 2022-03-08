@@ -1,7 +1,5 @@
 from game.shared.color import Color
 
-# Copied from snake to adapt to cycle
-
 COLUMNS = 40
 ROWS = 20
 CELL_SIZE = 15

@@ -12,29 +12,29 @@ class HandleCollisionsAction(Action):
         
         if not self._is_game_over:
             self._handle_player_collision(cast)
-            self._handle_segment_collision(cast)
+            self._handle_trail_collision(cast)
             self._handle_game_over(cast)
         
 
     def _handle_player_collision(self, cast):
         cycle = cast.get_first_actor("cycles")
-        cycle.grow_tail() # Camden, do this again for the 2nd player.
+        cycle.extend_trail() # Camden, do this again for the 2nd player.
         print()
             
-    def _handle_segment_collision(self, cast):
+    def _handle_trail_collision(self, cast):
         cycle = cast.get_first_actor("cycles")
-        head = cycle.get_segments()[0]
-        segments = cycle.get_segments()[1:]
+        head = cycle.get_trails()[0]
+        trails = cycle.get_trails()[1:]
         
-        for segment in segments:
-            if head.get_position().equals(segment.get_position()):
+        for trail in trails:
+            if head.get_position().equals(trail.get_position()):
                 self._is_game_over = True
         
     def _handle_game_over(self, cast):
         
         if self._is_game_over:
             cycle = cast.get_first_actor("cycles")
-            segments = cycle.get_segments()
+            trails = cycle.get_trails()
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -45,5 +45,5 @@ class HandleCollisionsAction(Action):
             message.set_position(position)
             cast.add_actor("messages", message)
 
-            for segment in segments:
-                segment.set_color(constants.WHITE)
+            for trail in trails:
+                trail.set_color(constants.WHITE)

@@ -11,7 +11,7 @@
 # Cycle
 Cycle is inspired by the game Tron Cycle. 
 
-Cycles is a two player game where you each control a snake and try to make the other play run into your tail by blocking them in with it.
+Cycles is a two player game where you each control a bicycle and try to make the other play run into your trail by blocking them in with it.
 
 You play the game on a simulated terminal, with a textual interface.
 

@@ -46,4 +46,4 @@ class ControlCycle1Action(Action):
             self._direction = Point(0, constants.CELL_SIZE)
         
         cycle1 = cast.get_first_actor("cycles")
-        cycle1.turn_head(self._direction)
+        cycle1.turn_cycle(self._direction)
