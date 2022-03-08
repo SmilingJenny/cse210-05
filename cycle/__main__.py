@@ -20,9 +20,16 @@ def main():
     
     # create the cast
     cast = Cast()
-    cast.add_actor("cycles", Cycle())
-    cast.add_actor("cycles", Cycle())
     cast.add_actor("scores", Score())
+    
+    cast.add_actor("cycles", Cycle())
+    player1 = cast.get_first_actor("cycles")
+    player1.create_cycle(Point(int(constants.MAX_X / 3), int(constants.MAX_Y / 2)), constants.RED)
+    
+    cast.add_actor("cycles", Cycle())
+    player2 = cast.get_second_actor("cycles")
+    player2.create_cycle(Point(int(constants.MAX_X / 3 * 2), int(constants.MAX_Y / 2)), constants.YELLOW)
+    
    
     # start the game
     keyboard_service = KeyboardService()

@@ -18,7 +18,7 @@ class HandleCollisionsAction(Action):
 
     def _handle_player_collision(self, cast):
         cycle = cast.get_first_actor("cycles")
-        cycle.grow_tail(1)
+        cycle.grow_tail()
         print()
             
     def _handle_segment_collision(self, cast):
