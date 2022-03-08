@@ -17,14 +17,14 @@ class HandleCollisionsAction(Action):
         
 
     def _handle_player_collision(self, cast):
-        snake = cast.get_first_actor("snakes")
-        snake.grow_tail(1)
+        cycle = cast.get_first_actor("cycles")
+        cycle.grow_tail(1)
         print()
             
     def _handle_segment_collision(self, cast):
-        snake = cast.get_first_actor("snakes")
-        head = snake.get_segments()[0]
-        segments = snake.get_segments()[1:]
+        cycle = cast.get_first_actor("cycles")
+        head = cycle.get_segments()[0]
+        segments = cycle.get_segments()[1:]
         
         for segment in segments:
             if head.get_position().equals(segment.get_position()):
@@ -33,8 +33,8 @@ class HandleCollisionsAction(Action):
     def _handle_game_over(self, cast):
         
         if self._is_game_over:
-            snake = cast.get_first_actor("snakes")
-            segments = snake.get_segments()
+            cycle = cast.get_first_actor("cycles")
+            segments = cycle.get_segments()
             food = cast.get_first_actor("foods")
 
             x = int(constants.MAX_X / 2)
