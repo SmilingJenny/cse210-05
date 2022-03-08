@@ -2,7 +2,7 @@
 import constants
 
 from game.casting.cast import Cast
-from game.casting.score import Score
+# from game.casting.score import Score
 from game.casting.cycle import Cycle
 from game.scripting.script import Script
 from game.scripting.control_cycle1_action import ControlCycle1Action
@@ -20,8 +20,9 @@ from game.shared.point import Point
 def main():
     
     # create the cast
+    
     cast = Cast()
-    cast.add_actor("scores", Score())
+    # cast.add_actor("scores", Score())
     
     cast.add_actor("cycles", Cycle())
     player1 = cast.get_first_actor("cycles")
