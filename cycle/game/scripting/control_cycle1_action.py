@@ -3,7 +3,7 @@ from game.scripting.action import Action
 from game.shared.point import Point
 
 
-class ControlActorsAction(Action):
+class ControlCycle1Action(Action):
     """
     An input action that controls the cycle.
     
@@ -45,5 +45,5 @@ class ControlActorsAction(Action):
         if self._keyboard_service.is_key_down('s'):
             self._direction = Point(0, constants.CELL_SIZE)
         
-        cycle = cast.get_first_actor("cycles")
-        cycle.turn_head(self._direction)
+        cycle1 = cast.get_first_actor("cycles")
+        cycle1.turn_head(self._direction)
