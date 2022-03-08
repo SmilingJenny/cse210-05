@@ -10,7 +10,8 @@ class Cycle(Actor):
     The responsibility of cycle is to move itself.
 
     Attributes:
-        _points (int): The number of points the food is worth.
+        _segments (list): The list of segments in the bicycle trail.
+        _prepare_body (method): The body of the bicycle.
     """
     def __init__(self):
         super().__init__()
