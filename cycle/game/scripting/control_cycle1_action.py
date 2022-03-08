@@ -7,14 +7,14 @@ class ControlCycle1Action(Action):
     """
     An input action that controls the cycle.
     
-    The responsibility of ControlActorsAction is to get the direction and move the cycle.
+    The responsibility of ControlCycle1Action is to get the direction and move the cycle.
 
     Attributes:
         _keyboard_service (KeyboardService): An instance of KeyboardService.
     """
 
     def __init__(self, keyboard_service):
-        """Constructs a new ControlActorsAction using the specified KeyboardService.
+        """Constructs a new ControlCycle1Action using the specified KeyboardService.
         
         Args:
             keyboard_service (KeyboardService): An instance of KeyboardService.
@@ -23,7 +23,7 @@ class ControlCycle1Action(Action):
         self._direction = Point(0, -constants.CELL_SIZE)
 
     def execute(self, cast, script):
-        """Executes the control actors action.
+        """Executes the control cycle1 action.
 
         Args:
             cast (Cast): The cast of Actors in the game.
