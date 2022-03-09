@@ -24,8 +24,10 @@ class Director:
         """
         self._video_service.open_window()
         while self._video_service.is_window_open():
+            game_over = script.get_second_action("update").get_is_game_over()
             self._execute_actions("input", cast, script)
-            self._execute_actions("update", cast, script)
+            if game_over == False: 
+                self._execute_actions("update", cast, script)
             self._execute_actions("output", cast, script)
         self._video_service.close_window()
 

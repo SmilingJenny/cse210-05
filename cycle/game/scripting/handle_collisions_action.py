@@ -47,3 +47,7 @@ class HandleCollisionsAction(Action):
 
             for trail in trails:
                 trail.set_color(constants.WHITE)
+            return
+        
+    def get_is_game_over(self):
+        return self._is_game_over
