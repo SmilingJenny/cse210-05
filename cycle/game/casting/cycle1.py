@@ -15,8 +15,9 @@ class Cycle1(Actor):
     """
     def __init__(self):
         super().__init__()
-        self.create_cycle()
         self._trails = []
+        self.create_cycle()
+        
 
     def get_trails(self):
         return self._trails

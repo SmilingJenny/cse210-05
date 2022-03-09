@@ -13,7 +13,7 @@ class Cycle2(Cycle1):
 
     def __init__(self):
         super().__init__()
-        self._trails = []
+       
  
     def extend_trail(self):
         # Creates trail segments
