@@ -32,6 +32,7 @@ class Cycle1(Actor):
             previous = self._trails[i - 1]
             velocity = previous.get_velocity()
             trailing.set_velocity(velocity)
+        self.extend_trail()
 
     def get_cycle(self):
         return self._trails[0]
@@ -46,7 +47,8 @@ class Cycle1(Actor):
         trail.set_position(position)
         trail.set_velocity(velocity)
         trail.set_text("#")
-        trail.set_color(constants.RED)
+        if self._trails[0].get_color() == constants.WHITE: trail.set_color(constants.WHITE)
+        else: trail.set_color(constants.RED)
         self._trails.append(trail)
 
     def turn_cycle(self, velocity):

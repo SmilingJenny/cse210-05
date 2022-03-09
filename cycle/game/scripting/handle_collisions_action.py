@@ -17,8 +17,6 @@ class HandleCollisionsAction(Action):
         
 
     def _handle_player_collision(self, cast):
-        cycle = cast.get_first_actor("cycles")
-        cycle.extend_trail() # Camden, do this again for the 2nd player.
         print()
             
     def _handle_trail_collision(self, cast):
@@ -48,6 +46,6 @@ class HandleCollisionsAction(Action):
             for trail in trails:
                 trail.set_color(constants.WHITE)
             return
-        
-    def get_is_game_over(self):
-        return self._is_game_over
+    # Use commented method if you want the players to stop moving at game over.      
+    # def get_is_game_over(self):
+    #     return self._is_game_over

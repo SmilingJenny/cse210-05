@@ -48,15 +48,15 @@ class Script:
         """
         if group in self._actions:
             self._actions[group].remove(action)
-            
-    def get_first_action(self, group):
-        result = None
-        if group in self._actions.keys():
-            result = self._actions[group][0]
-        return result
+    # Use commented methods if you want the players to stop moving at game over.        
+    # def get_first_action(self, group):
+    #     result = None
+    #     if group in self._actions.keys():
+    #         result = self._actions[group][0]
+    #     return result
     
-    def get_second_action(self, group):
-        result = None
-        if group in self._actions.keys():
-            result = self._actions[group][1]
-        return result
+    # def get_second_action(self, group):
+    #     result = None
+    #     if group in self._actions.keys():
+    #         result = self._actions[group][1]
+    #     return result
