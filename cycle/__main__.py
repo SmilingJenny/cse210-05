@@ -3,7 +3,8 @@ import constants
 
 from game.casting.cast import Cast
 # from game.casting.score import Score
-from game.casting.cycle import Cycle
+from game.casting.cycle1 import Cycle1
+from game.casting.cycle2 import Cycle2 
 from game.scripting.script import Script
 from game.scripting.control_cycle1_action import ControlCycle1Action
 # from game.scripting.control_cycle2_action import ControlCycle2Action
@@ -20,18 +21,10 @@ from game.shared.point import Point
 def main():
     
     # create the cast
-    
     cast = Cast()
+    cast.add_actor("cycles", Cycle1())      
+    cast.add_actor("cycles", Cycle2())
     # cast.add_actor("scores", Score())
-    
-    cast.add_actor("cycles", Cycle())
-    player1 = cast.get_first_actor("cycles")
-    player1.create_cycle(Point(int(constants.MAX_X / 3), int(constants.MAX_Y / 2)), constants.RED)
-    
-    cast.add_actor("cycles", Cycle())
-    player2 = cast.get_second_actor("cycles")
-    player2.create_cycle(Point(int(constants.MAX_X / 3 * 2), int(constants.MAX_Y / 2)), constants.YELLOW)
-    
    
     # start the game
     keyboard_service = KeyboardService()

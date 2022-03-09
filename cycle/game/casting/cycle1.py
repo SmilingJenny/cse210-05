@@ -3,7 +3,7 @@ from game.casting.actor import Actor
 from game.shared.point import Point
 
 
-class Cycle(Actor):
+class Cycle1(Actor):
     """
     A cycle.
     
@@ -15,6 +15,7 @@ class Cycle(Actor):
     """
     def __init__(self):
         super().__init__()
+        self.create_cycle()
         self._trails = []
 
     def get_trails(self):
@@ -44,18 +45,16 @@ class Cycle(Actor):
         trail.set_position(position)
         trail.set_velocity(velocity)
         trail.set_text("#")
-        trail.set_color(self.get_color())
+        trail.set_color(constants.RED)
         self._trails.append(trail)
 
     def turn_cycle(self, velocity):
         self._trails[0].set_velocity(velocity)
     
-    def create_cycle(self, position=Point(int(constants.MAX_X/2), int(constants.MAX_Y/2)), color=constants.GREEN):
-        self.set_color(color)
-        
+    def create_cycle(self):
         trail = Actor()
         trail.set_text("8")
-        trail.set_position(position)
+        trail.set_position(Point(int(constants.MAX_X / 3), int(constants.MAX_Y / 2)))
         trail.set_color(constants.GREEN)
         trail.set_velocity(Point(0, 0))
         self._trails.append(trail)
