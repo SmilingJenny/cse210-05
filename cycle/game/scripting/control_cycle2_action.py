@@ -7,7 +7,7 @@ Duplicate and rename control_actions_actor.py to apply to two actors/players.
 This define the movement of player_2
 
 Updated the "I, J, K, L" keys in keyboard_service.py to be arrows.
-    also changed 'def is_key_down(self, key)' in 'class KeyboardService'
+This is done by changing 'def is_key_down(self, key)' in 'class KeyboardService'
 
 '''
 
