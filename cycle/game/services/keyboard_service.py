@@ -21,15 +21,15 @@ class KeyboardService:
         self._keys['s'] = pyray.KEY_S
         self._keys['d'] = pyray.KEY_D
 
-        self._keys['i'] = pyray.KEY_I
-        self._keys['j'] = pyray.KEY_J
-        self._keys['k'] = pyray.KEY_K
-        self._keys['l'] = pyray.KEY_L
+        # self._keys['i'] = pyray.KEY_I
+        # self._keys['j'] = pyray.KEY_J
+        # self._keys['k'] = pyray.KEY_K
+        # self._keys['l'] = pyray.KEY_L
 
-        # self._keys['i'] = pyray.KEY_UP
-        # self._keys['j'] = pyray.KEY_LEFT
-        # self._keys['k'] = pyray.KEY_DOWN
-        # self._keys['l'] = pyray.KEY_RIGHT
+        self._keys['i'] = pyray.KEY_UP
+        self._keys['j'] = pyray.KEY_LEFT
+        self._keys['k'] = pyray.KEY_DOWN
+        self._keys['l'] = pyray.KEY_RIGHT
 
 
     def is_key_up(self, key):
@@ -50,11 +50,3 @@ class KeyboardService:
         pyray_key = self._keys[key.lower()]
         return pyray.is_key_down(pyray_key)
 
-
-'''
-press = pygame.key.get_pressed()
-if(press[pygame.K_LEFT]
-if(press[pygame.K_RIGHT]
-
-
-'''
