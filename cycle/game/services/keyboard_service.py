@@ -1,4 +1,5 @@
 import pyray
+# import pygame
 from game.shared.point import Point
 
 
@@ -25,6 +26,12 @@ class KeyboardService:
         self._keys['k'] = pyray.KEY_K
         self._keys['l'] = pyray.KEY_L
 
+        # self._keys['i'] = pyray.KEY_UP
+        # self._keys['j'] = pyray.KEY_LEFT
+        # self._keys['k'] = pyray.KEY_DOWN
+        # self._keys['l'] = pyray.KEY_RIGHT
+
+
     def is_key_up(self, key):
         """Checks if the given key is currently up.
         
@@ -42,3 +49,12 @@ class KeyboardService:
         """
         pyray_key = self._keys[key.lower()]
         return pyray.is_key_down(pyray_key)
+
+
+'''
+press = pygame.key.get_pressed()
+if(press[pygame.K_LEFT]
+if(press[pygame.K_RIGHT]
+
+
+'''

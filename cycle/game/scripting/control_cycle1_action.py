@@ -2,6 +2,11 @@ import constants
 from game.scripting.action import Action
 from game.shared.point import Point
 
+'''
+Duplicate and rename control_actions_actor.py to apply to two actors/players.
+This define the movement of player_1
+
+'''
 
 class ControlCycle1Action(Action):
     """
