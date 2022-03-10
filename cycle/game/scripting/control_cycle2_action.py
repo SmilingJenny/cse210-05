@@ -53,5 +53,5 @@ class ControlCycle2Action(Action):
         if self._keyboard_service.is_key_down('k'): #or self._keyboard_service.is_key_down(''):
             self._direction = Point(0, constants.CELL_SIZE)
         
-        cycle1 = cast.get_first_actor("cycles")
-        cycle1.turn_cycle(self._direction)
+        cycle2 = cast.get_second_actor("cycles")
+        cycle2.turn_cycle(self._direction)
