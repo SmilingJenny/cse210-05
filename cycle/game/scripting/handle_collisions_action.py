@@ -63,7 +63,7 @@ class HandleCollisionsAction(Action):
         if self._is_game_over:
             cycle1 = cast.get_first_actor("cycles")
             trails1 = cycle1.get_trails()
-            cycle2 = cast.get_first_actor("cycles")
+            cycle2 = cast.get_second_actor("cycles")
             trails2 = cycle2.get_trails()
             
 
@@ -78,8 +78,10 @@ class HandleCollisionsAction(Action):
 
             for trail in trails1:
                 trail.set_color(constants.WHITE)
-            return
-          
+            
+            for trail in trails2:
+                trail.set_color(constants.WHITE)
+            
 
     # Use commented method if you want the players to stop moving at game over.      
     # def get_is_game_over(self):
