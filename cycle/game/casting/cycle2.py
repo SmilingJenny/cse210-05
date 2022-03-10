@@ -27,7 +27,8 @@ class Cycle2(Cycle1):
         trail.set_position(position)
         trail.set_velocity(velocity)
         trail.set_text("#")
-        trail.set_color(constants.YELLOW)
+        if self._trails[0].get_color() == constants.WHITE: trail.set_color(constants.WHITE)
+        else: trail.set_color(constants.YELLOW)
         self._trails.append(trail)
     
     def create_cycle(self):    
