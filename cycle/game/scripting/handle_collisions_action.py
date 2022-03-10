@@ -4,10 +4,10 @@ from game.scripting.action import Action
 from game.shared.point import Point
 
 class HandleCollisionsAction(Action):
-    
+       
     def __init__(self):
         self._is_game_over = False
-
+        self.winner = ""
     def execute(self, cast, script):
         
         if not self._is_game_over:
@@ -28,14 +28,13 @@ class HandleCollisionsAction(Action):
         for trail1 in trails1:
             if head1.get_position().equals(trail1.get_position()):
                 self._is_game_over = True
-                ##player_2_score += 1
-                ##return player_2_score
-        ##for trail2 in trails2:
-            ##if head2.get_position().equals(trail2.get_position()):
+                self.winner = "player2"
+                
+        for trail2 in trails2:
+            if head2.get_position().equals(trail2.get_position()):
                 self._is_game_over = True  
-                ##player_1_score += 1
-                ##return player_1_score    
-              
+                self.winner = "player1"
+                
     def _handle_cycle_collision(self, cast):
         cycle1 = cast.get_first_actor("cycles")
         cycle2 = cast.get_second_actor("cycles")
@@ -49,14 +48,12 @@ class HandleCollisionsAction(Action):
         for trail1 in trails1:
             if head2.get_position().equals(trail1.get_position()):
                 self._is_game_over = True
-                ##player_2_score += 1
-                ##return player_2_score
+                self.winner = "player1"
+        
         for trail2 in trails2:
             if head1.get_position().equals(trail2.get_position()):
                 self._is_game_over = True
-                ##player_1_score += 1
-                ##return player_1_score
-            
+                self.winner = "player2"
      
     def _handle_game_over(self, cast):
         
@@ -72,7 +69,11 @@ class HandleCollisionsAction(Action):
             position = Point(x, y)
 
             message = Actor()
-            message.set_text("Game Over!")
+            if self.winner == "player1":
+                message.set_text("Player 1 Wins!")
+            if self.winner == "player2":
+                message.set_text("Player 2 Wins!")
+
             message.set_position(position)
             cast.add_actor("messages", message)
 
